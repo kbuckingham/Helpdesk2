@@ -1,0 +1,108 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="HelpDeskWeb.MasterPage" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <%-- Bootstrap CSS --%>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/helpdesk.css" rel="stlylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand"> HelpDesk Web</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown" >
+                        <a href="/Members/Default.aspx" class="dropdown-toggle" data-toggle="dropdown">Members<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/Members/EditProfile.aspx" class="navbar-nav">Edit Profile</a></li>
+                            <li><a href="/Members/StudentSchedule.aspx" class="navbar-nav">Schedule</a></li>
+                            <li><a href="/Members/PointWinners.aspx" class="navbar-nav">Point Winners</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown" >
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Work<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/" class="navbar-nav">Create</a></li>
+                            <li><a href="/" class="navbar-nav">Work Orders</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown" >
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Items<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/" class="navbar-nav">Add New Item</a></li>
+                            <li><a href="/" class="navbar-nav">Search</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown" >
+                        <a href="/" class="dropdown-toggle" data-toggle="dropdown">Help<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/ContentManagement/Default.aspx" class="navbar-nav">Help Pages</a></li>
+                            <li><a href="/ContentManagement/Confidentiality.aspx" class="navbar-nav">Confidentiality Agreement</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown" >
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/" class="navbar-nav">About</a></li>
+                            <li><a href="/" class="navbar-nav">Contact</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right pull-right">
+                    <li class="dropdown" id="profile">
+                        <img href="#" class="dropdown-toggle" data-toggle="dropdown" style="width:37px" id="profilepic" runat="server" src="/" />
+                        <ul class="dropdown-menu" role="menu">
+                            <li class=""><em>Welcome <asp:Label id="fullname" runat="server"></asp:Label></em></li>
+                            <li><a href="/" class="navbar-nav nav-justified">Edit Profile</a></li>
+                            <li><a href="/" class="navbar-nav nav-justified">My Schedule</a></li>
+                            <li><a href="/" class="navbar-nav nav-justified">My Work Grade</a></li>
+                            <li><a href="/" class="navbar-nav nav-justified">My Hours Worked</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div>
+        <asp:ContentPlaceHolder ID="Content" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <hr />
+        <footer>
+            <p>&copy; <asp:Literal runat="server" ID="nowdate"></asp:Literal> - Computer Center Help Desk</p>
+        </footer>
+    </div>
+</body>
+   <!-- /container -->
+   <%-- Script Section --%>
+    <script src="Scripts/jquery-2.1.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/jquery-ui-1.10.4/jquery-1.10.2.js"></script>
+    <script src="Scripts/jquery-ui-1.10.4/ui/jquery-ui.js"></script>
+    <script src="Scripts/jquery-ui-1.10.4/ui/jquery-ui-timepicker-addon.js"></script> 
+    <script src="ContentManagment/ckeditor/build-config.js"></script>
+    <script src="ContentManagment/ckeditor/ckeditor.js"></script>
+    <script src="ContentManagment/ckeditor/config.js"></script>
+</html>
